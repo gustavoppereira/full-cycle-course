@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY hello.go .
 
-RUN go build hello.go
+RUN GOOS=linux go build -ldflags="-s -w" hello.go
 
 FROM scratch
 
